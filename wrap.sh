@@ -110,6 +110,12 @@ _info "Session '${TMUX_SID}' is starting ..." | tee "${TMUX_LOG}"
 trap _trap_logs SIGHUP SIGINT SIGTERM
 
 tmux new -d -s "${TMUX_SID}" -n "${TMUX_CMD}" "{ ${TMUX_WRAP_CMD}; } 2>&1 | tee -a '${TMUX_LOG}'"
-tmux set -t "${TMUX_SID}" -g window-status-current-format "#[fg=colour234,bg=colour39] #W #[fg=colour39,bg=colour234]"
+tmux set -t "${TMUX_SID}" -g window-status-current-format "#[fg=colour0,bg=colour39] #W #[fg=colour39,bg=colour0]"
+tmux set -t "${TMUX_SID}" -g status-bg colour3
+tmux set -t "${TMUX_SID}" -g status-fg colour0
+tmux set -t "${TMUX_SID}" -g status-left-length 50
+tmux set -t "${TMUX_SID}" -g status-right-length 50
+tmux set -t "${TMUX_SID}" -g status-right ' %Y-%m-%d %H:%M:%S '
+tmux set -t "${TMUX_SID}" -g status-interval 1
 
 _tail_logs
