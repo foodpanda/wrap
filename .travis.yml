@@ -1,0 +1,14 @@
+language: bash
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - shellcheck
+
+script:
+ - make lint
+
+matrix:
+  fast_finish: true
