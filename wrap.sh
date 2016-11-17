@@ -71,6 +71,9 @@ TMUX_LOG="$(echo "${3:-"wrap.$(echo -n "${TMUX_CMD}" | openssl sha1).log"}" | xa
 
 [[ -z "${TMUX_CMD}" ]] && _error "command could not be empty"
 
+# unset TMUX, due warning of nested session
+unset TMUX
+
 if tmux has -t "${TMUX_SID}" 2>/dev/null; then
 	trap _trap_logs SIGHUP SIGINT SIGTERM
 
