@@ -87,7 +87,10 @@ if tmux has -t "${TMUX_SID}" 2>/dev/null; then
 	_tail_logs
 fi
 
-echo "--> ${TMUX_CMD} <--"
+echo "wrap - run command smart in tmux"
+echo
+echo "  >> ${TMUX_CMD} <<  "
+echo
 
 if ! _confirm "Ready to wrap this command? [y/N]"; then
   echo "Aborted..." 2>&1
