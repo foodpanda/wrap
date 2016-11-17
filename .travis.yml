@@ -1,0 +1,19 @@
+language: bash
+
+sudo: required
+
+matrix:
+  fast_finish: true
+
+cache:
+  apt: true
+
+addons:
+  apt:
+    sources:
+    - debian-sid
+    packages:
+    - shellcheck
+
+script:
+  - make lint
