@@ -1,5 +1,7 @@
 ## Run command smart in tmux - WRAP
 
+[![Build Status](https://travis-ci.org/jaymecd/wrap.svg?branch=master)](https://travis-ci.org/jaymecd/wrap)
+
 WRAP runs _command_ in detached `tmux` _session_, while capturing output to _logfile_.
 
 Timestamps in logs are written in `UTC` timezone.
