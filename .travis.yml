@@ -2,13 +2,15 @@ language: bash
 
 sudo: false
 
+matrix:
+  fast_finish: true
+
 addons:
   apt:
+    sources:
+    - debian-sid
     packages:
     - shellcheck
 
 script:
- - make lint
-
-matrix:
-  fast_finish: true
+  - make lint
