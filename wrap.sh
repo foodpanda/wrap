@@ -29,7 +29,8 @@ _trap() {
 }
 
 _trap_logs() {
-	local filename=$(printf "%q" "${TMUX_LOG}")
+	local filename
+	filename=$(printf "%q" "${TMUX_LOG}")
 	echo
 	echo "Log still could be accessible via:"
 	echo "    \$ tail -f ${filename}"
@@ -62,9 +63,9 @@ for cmd in tmux openssl cat tail time date xargs; do
 	hash "${cmd}" 2>/dev/null || _error "I require '${cmd}', but it's not installed"
 done
 
-TMUX_CMD="$(echo ${1:-} | xargs)"
-TMUX_SID="$(echo ${2:-wrap} | xargs)"
-TMUX_LOG="$(echo ${3:-"wrap.$(echo -n ${TMUX_CMD} | openssl sha1).log"} | xargs)"
+TMUX_CMD="$(echo "${1:-}" | xargs)"
+TMUX_SID="$(echo "${2:-wrap}" | xargs)"
+TMUX_LOG="$(echo "${3:-"wrap.$(echo -n "${TMUX_CMD}" | openssl sha1).log"}" | xargs)"
 
 [[ "${TMUX_CMD}" == "--help" || "${TMUX_CMD}" == '-h' ]] && _usage
 
