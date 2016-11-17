@@ -25,6 +25,19 @@ Repeated execution of same WRAP command, would attach existing `tmux` session, i
 
 **Note!** Creating new window or pane within a session may affect standard workflow.
 
+### Install
+
+```
+$ git clone git@github.com:jaymecd/wrap.git && cd wrap
+$ make install
+```
+
+Custom location
+
+```
+$ PREFIX=~/bin make install
+```
+
 ### Demo time
 
 First run, `Ctrl-c` in the middle of execution.
