@@ -1,6 +1,6 @@
 ## Run command smart in tmux - WRAP
 
-[![Build Status](https://travis-ci.org/jaymecd/wrap.svg?branch=master)](https://travis-ci.org/jaymecd/wrap)
+[![Build Status](https://travis-ci.org/foodpanda/wrap.svg?branch=master)](https://travis-ci.org/foodpanda/wrap)
 
 WRAP runs _command_ in detached `tmux` _session_, while capturing output to _logfile_.
 
@@ -28,7 +28,7 @@ Repeated execution of same WRAP command, would attach existing `tmux` session, i
 ### Install
 
 ```
-$ git clone git@github.com:jaymecd/wrap.git && cd wrap
+$ git clone git@github.com:foodpanda/wrap.git && cd wrap
 $ make install
 ```
 
